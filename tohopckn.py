@@ -1,5 +1,5 @@
 def main():
-    ls: list = [[0 for i in range(1000)] for j in range(1000)]
+    ls: list = [[0 for i in range(5000)] for j in range(5000)]
     for i in range(1000):
         for j in range(i + 1):
             if i == j or j == 0:
@@ -7,10 +7,11 @@ def main():
             else:
                 ls[i][j] = ls[i - 1][j - 1] + ls[i - 1][j]
                 ls[i][j] %= int(1e9 + 7)
-
-    t: int = int(input())
-    while t > 0:
-        n, k = map(int, input().split())
-        print(ls[n][k])
-        t -= 1
+    m, k = map(int, input().split())
+    i = k
+    ans = 0
+    while i <= 2 * m:
+        ans += ls[3*m][i] - m * ls[3 * m - 3][i - 3]
+        i += k
+    print(ans)
 main()

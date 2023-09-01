@@ -1,8 +1,7 @@
 import numpy as np
 
 MODULO = int(1e9 + 7)
-def mulmatrix(ls):
-    pass
+
 def powermatrix(ls, k):
     if k == 1:
         return ls
@@ -17,9 +16,9 @@ def main():
     for _ in range(t):
         n, k = map(int, input().split())
         ls: np.array = np.array([[j for j in map(int, input().split())] for i in range(n)])
+        print(ls)
         array: np.array = powermatrix(ls, k)
-        print(array)
-        print(np.sum(array, axis=1)[n - 1] % MODULO)
-
+        # print(ls - 1)
+        print(np.linalg.inv(np.array(ls - 1)))
 
 main()

@@ -1,12 +1,6 @@
 def output():
     for i in lis:
-        print(i, end=" ");
-    if m % 2 == 0:
-        for i in range(len(lis) - 1, -1, -1):
-            print(lis[i], end=" ")
-    else:
-        for i in range(len(lis) - 2, -1, -1):
-            print(lis[i], end=" ")
+        print(i, end=" ")
     print()
 
 def Try(i):
@@ -21,11 +15,6 @@ def main():
     global n,m, lis
     n = int(input())
     lis= []
-    m = n
-    if n % 2 ==0:
-        n = n /2
-    else:
-        n = int(n/2) + 1
     Try(1)
 
 main()
