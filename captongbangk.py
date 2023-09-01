@@ -1,5 +1,5 @@
 def main():
-    t: int= int(input())
+    t: int = int(input())
     while t > 0:
         n, k = map(int, input().split())
         ls: list= list(map(int, input().split()))
